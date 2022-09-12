@@ -1,0 +1,28 @@
+<form [formGroup]="myForm" style="background-color: rgb(199, 243, 162);color:red">
+    Value : {{myForm.value | json }}
+    <hr>
+    <mat-form-field >
+        <input matInput placeholder="email" formControlName="email">
+        <mat-error *ngIf="email.invalid && email.touched" >
+            your email does not look right 
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="password" formControlName="password">
+        <mat-hint align="end">Must have one letter ,and one number</mat-hint>
+        <mat-error *ngIf="password.invalid && password.touched">
+          this.password sucks...
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="age" formControlName="age" [value]="0">
+        <mat-error *ngIf="age.errors && age.touched">
+            {{age.errors}}
+        </mat-error>
+    </mat-form-field>
+
+        <mat-checkbox matInput placeholder="agree" color="primary" formControlName="agree">Are You Sure ?</mat-checkbox>
+
+    <button mat-raised-button color="primary" [disabled]="myForm.invalid">Submit</button>
+</form>

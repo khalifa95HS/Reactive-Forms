@@ -1,0 +1,13 @@
+<form [formGroup]="myForm" style="background-color: rgb(199, 243, 162);color:red">
+    Value : {{myForm.value | json }}
+    <hr>
+    <mat-form-field >
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+        <textarea matInput placeholder="Your Message ... " formControlName="message"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select matInput placeholder="carrer" formControlName="career"></mat-select>
+    </mat-form-field>
+</form>
